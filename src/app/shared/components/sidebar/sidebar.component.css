@@ -1,0 +1,21 @@
+.container {
+  padding: 8px;
+  height: 100%;
+}
+
+.container .header {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  border-bottom: 0.8px solid #EAEAEA;
+}
+
+.container .header img {
+  width: 50px;
+}
+
+.container .options {
+  padding: 8px;
+  height: auto;
+  min-height: 200px;
+}

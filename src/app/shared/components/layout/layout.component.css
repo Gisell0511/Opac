@@ -1,0 +1,20 @@
+.main {
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    "sidebar content"
+    "sidebar content"
+  ;
+  grid-template-columns: 16% 1fr;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  height: 100%;
+}
+
+.content {
+  grid-area: content;
+  height: 100%;
+  background: rgb(205, 219, 219);
+}
