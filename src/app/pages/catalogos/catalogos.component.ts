@@ -1,31 +1,55 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, inject } from '@angular/core';
-import { DropdownModule } from 'primeng/dropdown';
+import { Component } from '@angular/core';
 import { CatalogoService } from '../../services/catalogo.service';
 import { FormsModule } from '@angular/forms';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { BrowserModule } from '@angular/platform-browser';
 import { PanelMenuModule } from 'primeng/panelmenu';
-import { HttpClientModule } from '@angular/common/http';
+import { CascadeSelectModule } from 'primeng/cascadeselect';
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'app-catalogos',
   standalone: true,
-  imports: [DropdownModule, PanelMenuModule, HttpClientModule],
+  imports: [FormsModule, PanelMenuModule, CascadeSelectModule, InputTextModule, ButtonModule],
   templateUrl: './catalogos.component.html',
   styleUrl: './catalogos.component.css'
 })
 export class CatalogosComponent {
 
-  public catalogos: any
-  public catalagoSelected: any
+  constructor(private readonly catalogoService: CatalogoService){}
 
-  public service = inject(CatalogoService)
+  catalogos: any[] = [
+    {
+      name: 'Corsalud',
+      id: '0'
+    }
+  ]
+  catalogoSeleccionado: string = ''
+  tipoConsulta: any[] = [
+    {
+      name: 'Todos los campos',
+      id: '0'
+    },
+    {
+      name: 'Autor',
+      id: '1'
+    },
+    {
+      name: 'Titulo',
+      id: '2'
+    },
+    {
+      name: 'Materia',
+      id: '3'
+    }
+  ]
+  tipoConsultaSeleccionado: string = ''
+  consultaUsuario: string = ''
 
-  // public getCatalogos() {
-  //   this.service.getCatalogos().subscribe((data: any) => {
-  //     this.catalogos = data
-  //     this.catalagoSelected = this.catalogos[0].tipoCatalogo;
-  //   })
-  // }
+  buscarConsulta(){
+    console.log('buscar', this.consultaUsuario)
+    this.catalogoService.getCatalogos().subscribe((data: any) => {
+      console.log(data)
+    })
+  }
 
 }

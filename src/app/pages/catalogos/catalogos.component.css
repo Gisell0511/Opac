@@ -1,3 +1,28 @@
 .container {
-  background: brown;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+}
+
+.container .container-select {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  width: 60%;
+}
+
+.container .container-search {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  gap: 16px;
+}
+
+.container .container-card {
+  background: #4d56;
+  width: 100%;
+  height: 100%;
 }

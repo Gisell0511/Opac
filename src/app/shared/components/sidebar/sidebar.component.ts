@@ -1,4 +1,3 @@
-import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { PanelMenuModule } from 'primeng/panelmenu';
@@ -7,9 +6,10 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [PanelMenuModule, CommonModule],
+  imports: [PanelMenuModule],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.css'
+  styleUrl: './sidebar.component.css',
+  animations: []
 })
 export class SidebarComponent implements OnInit {
   items: MenuItem[] = [];

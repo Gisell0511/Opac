@@ -6,13 +6,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CatalogoService {
+  private url: string = environment.apiUrl
 
-  private url = environment
-
-  private http = inject(HttpClient)
+  constructor(private readonly httpClient: HttpClient){}
 
   public getCatalogos() {
-    return this.http.get(this.url + 'webresources/opacd/catalogos?estado=1');
+    return this.httpClient.get(`${this.url}webresources/opacd/catalogos?estado=1`);
   }
 
 }

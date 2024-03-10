@@ -1,2 +1,34 @@
-<p>catalogos works!</p>
-<!-- <p-dropdown [options]="catalogos" [(ngModel)]="catalagoSelected" optionLabel="name" [showClear]="true" placeholder="Catalogo Corsalud"></p-dropdown> -->
+<div class="container">
+  <div class="container-select">
+    <p-cascadeSelect 
+    [options]="catalogos"
+    optionLabel="name"
+    optionGroupLabel="name"
+    optionValue="id"
+    [optionGroupChildren]="[]" 
+    placeholder="Selecciona un catalogo"
+    [(ngModel)]="catalogoSeleccionado"
+    [style]="{ width: '18rem' }"
+    ></p-cascadeSelect>
+    <p-cascadeSelect 
+    [options]="tipoConsulta"
+    optionLabel="name"
+    optionGroupLabel="name"
+    optionValue="id"
+    [optionGroupChildren]="[]" 
+    placeholder="Tipo consulta"
+    [(ngModel)]="tipoConsultaSeleccionado"
+    [style]="{ width: '18rem' }"
+    ></p-cascadeSelect>
+  </div>
+  <div class="container-search">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText [(ngModel)]="consultaUsuario" [style]="{ width: '24rem' }" />
+    </span>
+    <p-button (onClick)="buscarConsulta()" label="Buscar"></p-button>
+  </div>
+  <div class="container-card">
+    
+  </div>
+</div>
