@@ -1,6 +1,6 @@
 <div class="container">
   <div class="container-select">
-    <p-cascadeSelect 
+    <!-- <p-cascadeSelect 
     [options]="catalogos"
     optionLabel="name"
     optionGroupLabel="name"
@@ -9,7 +9,8 @@
     placeholder="Selecciona un catalogo"
     [(ngModel)]="catalogoSeleccionado"
     [style]="{ width: '18rem' }"
-    ></p-cascadeSelect>
+    ></p-cascadeSelect> -->
+    <p-dropdown [options]="catalogos" [(ngModel)]="catalogoSeleccionado" optionLabel="nombreEmpresa" [showClear]="true" placeholder="Selecciona un catalogo"></p-dropdown>
     <p-cascadeSelect 
     [options]="tipoConsulta"
     optionLabel="name"
