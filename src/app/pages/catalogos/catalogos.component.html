@@ -1,22 +1,22 @@
 <div class="container">
   <div class="container-select">
-    <!-- <p-cascadeSelect 
+    <!-- <p-cascadeSelect
     [options]="catalogos"
     optionLabel="name"
     optionGroupLabel="name"
     optionValue="id"
-    [optionGroupChildren]="[]" 
+    [optionGroupChildren]="[]"
     placeholder="Selecciona un catalogo"
     [(ngModel)]="catalogoSeleccionado"
     [style]="{ width: '18rem' }"
     ></p-cascadeSelect> -->
     <p-dropdown [options]="catalogos" [(ngModel)]="catalogoSeleccionado" optionLabel="nombreEmpresa" [showClear]="true" placeholder="Selecciona un catalogo"></p-dropdown>
-    <p-cascadeSelect 
+    <p-cascadeSelect
     [options]="tipoConsulta"
     optionLabel="name"
     optionGroupLabel="name"
     optionValue="id"
-    [optionGroupChildren]="[]" 
+    [optionGroupChildren]="[]"
     placeholder="Tipo consulta"
     [(ngModel)]="tipoConsultaSeleccionado"
     [style]="{ width: '18rem' }"
@@ -30,6 +30,38 @@
     <p-button (onClick)="buscarConsulta()" label="Buscar"></p-button>
   </div>
   <div class="container-card">
-    
+    <section class="card-fila">
+      <div class="cardp">
+        <i class="pi pi-user"></i>
+        Autor
+      </div>
+      <div class="cardp">
+        Titulo
+      </div>
+      <div class="cardp">
+        Materia
+      </div>
+    </section>
+    <section class="card-fila">
+      <div class="cardm">
+        <h1>hhhhh</h1>
+      </div>
+      <div class="cardm">
+        <h1>hhhhh</h1>
+      </div>
+    </section>
+    <section class="card-fila">
+      <div class="cardu">
+        <h1>hhhhh</h1>
+      </div>
+      <div class="cardusl">
+        <div class="cardus">
+          <h1>gggg</h1>
+        </div>
+        <div class="cardus">
+          <h1>eeeee</h1>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
