@@ -41,8 +41,8 @@
   width: 10%;
   height: 90px;
   margin: 20px;
-  background-color: rgb(203, 37, 37);
-  border: 2px solid rgb(207, 54, 54);
+  background-color: rgb(150, 150, 150);
+  border: 2px solid rgb(196, 196, 196);
   border-radius: 10px;
   color: rgb(255, 255, 255);
 }
@@ -56,11 +56,11 @@ i {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 40%;
+  width: 20%;
   height: 90px;
   margin: 20px;
-  background-color: rgb(32, 202, 80);
-  border: 2px solid rgb(94, 211, 65);
+  background-color: rgb(120, 122, 121);
+  border: 2px solid rgb(133, 137, 132);
   border-radius: 10px;
   color: rgb(255, 255, 255);
 }
