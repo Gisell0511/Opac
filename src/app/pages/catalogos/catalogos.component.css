@@ -1,5 +1,4 @@
 @import "primeicons/primeicons.css";
-
 .container {
   height: 100%;
   display: flex;
@@ -32,6 +31,9 @@
 .card-fila {
   display: flex;
   justify-content: center;
+  width: 100%;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .cardp {
@@ -40,11 +42,19 @@
   text-align: center;
   width: 20%;
   height: 200px;
-  margin: 20px;
-  background-color: rgb(150, 150, 150);
-  border: 2px solid rgb(196, 196, 196);
-  border-radius: 10px;
-  color: rgb(255, 255, 255);
+  padding: 8px;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #EAEAEA;
+  transition: all linear 0.2s;
+  box-shadow: 9px 8px 22px -11px rgba(0,0,0,0.75);
+
+}
+
+.cardp:hover {
+  transform: scale(1.05);
 }
 
 i {
@@ -56,14 +66,48 @@ i {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 20%;
+  min-width: 20%;
+  width: auto;
   height: 90px;
-  margin: 20px;
-  background-color: rgb(120, 122, 121);
-  border: 2px solid rgb(133, 137, 132);
-  border-radius: 10px;
-  color: rgb(255, 255, 255);
+  padding: 8px;
+  border-radius: 12px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  background: #EAEAEA;
+  transition: all linear 0.2s;
+  box-shadow: 9px 8px 22px -11px rgba(0,0,0,0.75);
 }
 
+.cardm:hover{
+  transform: scale(1.05);
+}
 
+.card-icon{
+  color: #e36159;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.card-icons{
+  color: #0074B9;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-iconsp{
+  color: #f4bd27;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-iconsm{
+  color: #2ebe41;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
 

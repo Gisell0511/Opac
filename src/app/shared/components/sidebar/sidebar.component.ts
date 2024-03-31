@@ -27,40 +27,78 @@ export class SidebarComponent implements OnInit {
         routerLink: 'explorar'
       },
       {
-        label: 'Catalogos-seriada',
-        icon:'pi-calendar',
-        routerLink: 'catalogos-seriada'
-      },
-      {
-        label: 'Servicios-catalogos',
-        icon:'pi-calendar',
-        routerLink: 'servicios-catalogos'
-      },
-      {
-        label: 'consultas-avanzadas',
-        icon: 'pi pi-book',
-        // routerLink: 'consultas-avanzadas',
+        label: 'catalogos seriadas',
+        icon: 'pi calenda',
         items: [
           {
-            label: 'test',
-            icon: 'pi pi-book',
-            // routerLink: 'consultas-avanzadas'
+            label: 'temas de ejemplares',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'catalogos-seriada/temas-de-ejemplares',
+          },
+          {
+            label: 'temas generales',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'catalogos-seriada/temas-generales',
+          },
+          {
+            label: 'texto completo',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'catalogos-seriada/texto-completo',
+          },
+          {
+            label: 'Titulos generales',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'catalogos-seriada/titulos-generales',
           }
-          // {
-          //   label: 'Autor',
-          //   // icon: 'fa fa-sitemap  fa-fw',
-          //   // routerLink: 'autor',
-          // },
-          // {
-          //   label: 'Titulo',
-          //   // icon: 'fa fa-sitemap  fa-fw',
-          //   // routerLink: 'titulo',
-          // },
-          // {
-          //   label: 'Materia',
-          //   // icon: 'fa fa-sitemap  fa-fw',
-          //   // routerLink: 'materia',
-          // },
+
+        ],
+      },
+      {
+        label: 'Servicios Catalogos',
+        icon: 'pi pi-book',
+        items: [
+          {
+            label: 'Alertas Bibliograficas',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'servicios-catalogos/alertas-bibliograficas',
+          },
+          {
+            label: 'Circulacion Digital',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'servicios-catalogos/circulacion-digital',
+          },
+          {
+            label: 'Diseminacion',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'servicios-catalogos/diseminacion',
+          },
+          {
+            label: 'Reservas Web',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'servicios-catalogos/reservas-web',
+          }
+
+        ],
+      },
+      {
+        label: 'consultas avanzadas',
+        icon: 'pi pi-book',
+        items: [
+          {
+            label: 'Autor',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'consultas-avanzadas/autor',
+          },
+          {
+            label: 'Titulo',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'consultas-avanzadas/titulo',
+          },
+          {
+            label: 'Materia',
+            icon: 'fa fa-sitemap  fa-fw',
+            routerLink: 'consultas-avanzadas/materia',
+          },
 
         ],
       },

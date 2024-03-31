@@ -27,45 +27,47 @@
       <i class="pi pi-search"></i>
       <input type="text" pInputText [(ngModel)]="consultaUsuario" [style]="{ width: '24rem' }" />
     </span>
+
     <p-button (onClick)="buscarConsulta()" label="Buscar"></p-button>
   </div>
   <div class="container-card">
     <section class="card-fila">
       <div class="cardp">
-        <i class="pi pi-user"></i>
-        Autor
+        <i class="pi pi-user card-iconsm"></i>
+        <a class="card-iconsm"routerLink="/consultas-avanzadas/autor">Autor</a>
       </div>
       <div class="cardp">
-        <i class="pi pi-bookmark"></i>
-        Titulo
+        <i class="pi pi-bookmark card-iconsp"></i>
+        <a class="card-iconsp"routerLink="/consultas-avanzadas/titulo">Titulo</a>
       </div>
       <div class="cardp">
-        <i class="pi pi-book"></i>
-        Materia
+        <i class="pi pi-book card-icons"></i>
+        <a class="card-icons"routerLink="/consultas-avanzadas/materia">Materia</a>
       </div>
     </section>
     <section class="card-fila">
       <div class="cardm">
-        <i class="pi pi-calendar"></i>
-        Publicaciones Seriadas
+        <i class="pi pi-calendar card-icon" ></i>
+        <a class="card-icon" routerLink="/catalogos-seriada/titulos-generales">Publicaciones Seriadas</a>
+
       </div>
       <div class="cardm">
-        <i class="pi pi-users"></i>
-        Explorar Catálogo
+        <i class="pi pi-users card-iconsm"></i>
+        <a class="card-iconsm"routerLink="/explorar">Explorar Catálogo</a>
       </div>
       <div class="cardm">
-        <i class="pi pi-desktop"></i>
-        Reservas WEB
+        <i class="pi pi-desktop card-icon"></i>
+        <a class="card-icon" routerLink="/servicios-catalogos/reservas-web">Reservas WEB</a>
       </div>
     </section>
     <section class="card-fila">
       <div class="cardp">
-        <i class="pi pi-tablet"></i>
-        Circulación Digital
+        <i class="pi pi-tablet card-icons"></i>
+        <a class="card-icons"routerLink="/servicios-catalogos/circulacion-digital">Circulación Digital</a>
       </div>
       <div class="cardp">
-        <i class="pi pi-stop"></i>
-        D.S.I
+        <i class="pi pi-stop card-iconsp"></i>
+        <a class="card-iconsp"routerLink="/servicios-catalogos/diseminacion">D.S.I</a>
       </div>
     </section>
   </div>

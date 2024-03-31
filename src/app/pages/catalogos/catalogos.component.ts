@@ -6,11 +6,12 @@ import { CascadeSelectModule } from 'primeng/cascadeselect';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-catalogos',
   standalone: true,
-  imports: [FormsModule, PanelMenuModule, CascadeSelectModule, InputTextModule, ButtonModule, DropdownModule ],
+  imports: [RouterLink ,FormsModule, PanelMenuModule, CascadeSelectModule, InputTextModule, ButtonModule, DropdownModule ],
   templateUrl: './catalogos.component.html',
   styleUrl: './catalogos.component.css'
 })
