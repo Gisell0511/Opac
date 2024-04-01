@@ -11,5 +11,6 @@ import { InputTextModule } from 'primeng/inputtext';
   styleUrl: './explorar.component.css'
 })
 export class ExplorarComponent {
+border: any;
 
 }
