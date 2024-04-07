@@ -1,57 +1,64 @@
 <div class="container">
-  <div class="container-select">
-    <!-- <p-cascadeSelect
-    [options]="catalogos"
-    optionLabel="name"
-    optionGroupLabel="name"
-    optionValue="id"
-    [optionGroupChildren]="[]"
-    placeholder="Selecciona un catalogo"
-    [(ngModel)]="catalogoSeleccionado"
-    [style]="{ width: '18rem' }"
-    ></p-cascadeSelect> -->
-    <p-dropdown [options]="catalogos" [(ngModel)]="catalogoSeleccionado" optionLabel="nombreEmpresa" [showClear]="true" placeholder="Selecciona un catalogo"></p-dropdown>
-    <p-cascadeSelect
-    [options]="tipoConsulta"
-    optionLabel="name"
-    optionGroupLabel="name"
-    optionValue="id"
-    [optionGroupChildren]="[]"
-    placeholder="Tipo consulta"
-    [(ngModel)]="tipoConsultaSeleccionado"
-    [style]="{ width: '18rem' }"
-    ></p-cascadeSelect>
+  <!-- <div class="bprincipal"> -->
+    <div class="container-select">
+      <!-- <p-cascadeSelect
+      [options]="catalogos"
+      optionLabel="name"
+      optionGroupLabel="name"
+      optionValue="id"
+      [optionGroupChildren]="[]"
+      placeholder="Selecciona un catalogo"
+      [(ngModel)]="catalogoSeleccionado"
+      [style]="{ width: '18rem' }"
+      ></p-cascadeSelect> -->
+      <p-dropdown 
+      [options]="catalogos" 
+      [(ngModel)]="catalogoSeleccionado" 
+      optionLabel="nombreEmpresa" 
+      [showClear]="true" 
+      placeholder="Selecciona un catalogo"
+      [style]="{ width: '230%' }">
+    </p-dropdown>
+      <p-cascadeSelect
+      [options]="tipoConsulta"
+      optionLabel="name"
+      optionGroupLabel="name"
+      optionValue="id"
+      [optionGroupChildren]="[]"
+      placeholder="Tipo consulta"
+      [(ngModel)]="tipoConsultaSeleccionado"
+      [style]="{ width: '410%'  }"
+      ></p-cascadeSelect>
+    </div>
+    <div class="container-search">
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text" 
+        pInputText 
+        [(ngModel)]="consultaUsuario" 
+        [style]="{ width: '1280px' }" />
+      </span>
+      <p-button (onClick)="buscarConsulta()" label="Buscar"></p-button>
+    <!-- </div> -->
   </div>
-  <div class="container-search">
-    <span class="p-input-icon-left">
-      <i class="pi pi-search"></i>
-      <input type="text" pInputText [(ngModel)]="consultaUsuario" [style]="{ width: '24rem' }" />
-    </span>
-
-    <p-button (onClick)="buscarConsulta()" label="Buscar"></p-button>
-  </div>
-
-
-    <br><br>
-    <section class="card-fila">
-      <img src="../../../../assets/images/Autor.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/autor">
-      <img src="../../../../assets/images/3.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/titulo">
-      <img src="../../../../assets/images/4.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/materia">
+    <section class="contenedor_cards">
+      <div class="card-fila">
+        <img src="../../../../assets/images/Autor.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/autor">
+        <img src="../../../../assets/images/3.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/titulo">
+        <img src="../../../../assets/images/4.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/materia">
+        <img src="../../../../assets/images/5.png" alt=""  class="cardp" routerLink="/catalogos-seriada/titulos-generales">
+      </div>
+  
+      <div class="card-fila">
+        <img src="../../../../assets/images/6.png" alt=""  class="cardp" routerLink="/explorar">
+        <img src="../../../../assets/images/7.png" alt=""  class="cardp" routerLink="/servicios-catalogos/reservas-web">
+        <img src="../../../../assets/images/8.png" alt=""  class="cardp" routerLink="/servicios-catalogos/circulacion-digital">
+        <img src="../../../../assets/images/9.png" alt=""  class="cardp" routerLink="/servicios-catalogos/diseminacion">
+      </div>
     </section>
-    <br><br>
-    <section class="card-fila">
 
-      <img src="../../../../assets/images/5.png" alt=""  class="cardm" routerLink="/catalogos-seriada/titulos-generales">
-
-      <img src="../../../../assets/images/6.png" alt=""  class="cardm" routerLink="/explorar">
-
-      <img src="../../../../assets/images/7.png" alt=""  class="cardm" routerLink="/servicios-catalogos/reservas-web">
-    </section>
-    <br><br>
-    <section class="card-fila">
-      <img src="../../../../assets/images/8.png" alt=""  class="cardp" routerLink="/servicios-catalogos/circulacion-digital">
-      <img src="../../../../assets/images/9.png" alt=""  class="cardp" routerLink="/servicios-catalogos/diseminacion">
-
-    </section>
+    
+  
+  
 
 </div>

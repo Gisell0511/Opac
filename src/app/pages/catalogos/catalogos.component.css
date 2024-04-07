@@ -8,7 +8,7 @@
 }
 
 .container .container-select {
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   gap: 16px;
@@ -22,17 +22,18 @@
   gap: 16px;
 }
 
-.container .container-card {
+.contenedor_cards {
   background: rgb(255, 254, 254);
   width: 100%;
   height: 100%;
+  border-radius: 15px;
 }
 
 .card-fila {
   display: flex;
   justify-content: center;
   width: 100%;
-  gap: 32px;
+  gap: 20px;
   margin-top: 16px;
 }
 
@@ -40,13 +41,11 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  width: 20%;
-  height: 250px;
-
-  border-radius: 25px;
+  width: 15%;
+  height: 5%;
+  border-radius: 15px;
   justify-content: center;
   align-items: center;
-  gap: 12px;
   transition: all linear 0.2s;
   box-shadow: 9px 8px 22px -11px rgba(0,0,0,0.75);
 
@@ -56,53 +55,12 @@
   transform: scale(1.05);
 }
 
-i {
-  margin: 10px;
-}
 
-.cardm {
+
+
+
+
+.bprincipal {
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 28%;
-  height: 250px;
-  border-radius: 25px;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  transition: all linear 0.2s;
-  box-shadow: 9px 8px 22px -11px rgba(0,0,0,0.75);
-}
-
-.cardm:hover{
-  transform: scale(1.05);
-}
-
-.card-icon{
-  color: #e36159;
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.card-icons{
-  color: #0074B9;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.card-iconsp{
-  color: #f4bd27;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.card-iconsm{
-  color: #42c954;
-  text-decoration: none;
-  font-size: 20px;
-  font-weight: bold;
 }
 
