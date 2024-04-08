@@ -11,11 +11,11 @@
       [(ngModel)]="catalogoSeleccionado"
       [style]="{ width: '18rem' }"
       ></p-cascadeSelect> -->
-      <p-dropdown 
-      [options]="catalogos" 
-      [(ngModel)]="catalogoSeleccionado" 
-      optionLabel="nombreEmpresa" 
-      [showClear]="true" 
+      <p-dropdown
+      [options]="catalogos"
+      [(ngModel)]="catalogoSeleccionado"
+      optionLabel="nombreEmpresa"
+      [showClear]="true"
       placeholder="Selecciona un catalogo"
       [style]="{ width: '230%' }">
     </p-dropdown>
@@ -33,22 +33,23 @@
     <div class="container-search">
       <span class="p-input-icon-left">
         <i class="pi pi-search"></i>
-        <input type="text" 
-        pInputText 
-        [(ngModel)]="consultaUsuario" 
+        <input type="text"
+        pInputText
+        [(ngModel)]="consultaUsuario"
         [style]="{ width: '1280px' }" />
       </span>
       <p-button (onClick)="buscarConsulta()" label="Buscar"></p-button>
     <!-- </div> -->
   </div>
     <section class="contenedor_cards">
+      <h1>CATALOGO</h1>
       <div class="card-fila">
         <img src="../../../../assets/images/Autor.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/autor">
         <img src="../../../../assets/images/3.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/titulo">
         <img src="../../../../assets/images/4.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/materia">
         <img src="../../../../assets/images/5.png" alt=""  class="cardp" routerLink="/catalogos-seriada/titulos-generales">
       </div>
-  
+
       <div class="card-fila">
         <img src="../../../../assets/images/6.png" alt=""  class="cardp" routerLink="/explorar">
         <img src="../../../../assets/images/7.png" alt=""  class="cardp" routerLink="/servicios-catalogos/reservas-web">
@@ -57,8 +58,8 @@
       </div>
     </section>
 
-    
-  
-  
+
+
+
 
 </div>

@@ -1,4 +1,10 @@
 @import "primeicons/primeicons.css";
+
+h1{
+  text-align: center;
+  color: rgb(233, 22, 22);
+  font-size:x-large;
+}
 .container {
   height: 100%;
   display: flex;
