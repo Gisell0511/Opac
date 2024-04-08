@@ -1,22 +1,28 @@
 <div class="principal">
-  <div class="second">
-    <p-card header="Title" [style]="{ height: '500px' }">
-      <ng-template pTemplate="header">
-        <input type="text" pInputText  />
-    </ng-template>
-      <p class="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-          quas!
-      </p>
-    </p-card>
-  </div>
   <div class="third" >
-    <p-card header="Title" [style]="{ height: '500px' }">
-      <p class="m-0">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
-          quas!
-      </p>
+    <p-card  [style]="{ height: '630px' }">
+      <div pFocusTrap class="card flex align-items-center justify-content-center ">
+        <div>
+          <h4>Input</h4>
+          <input id="input" type="text" size="30" pInputText>
+        </div>
+        <div>
+            <h4>Input</h4>
+            <input id="input" type="date" size="30" pInputText style="margin-right: 20px;">
+            <input id="input" type="date" size="30" pInputText>
+        </div>
+        <div>
+          <h4>Input</h4>
+          <input id="input" type="text" size="30" pInputText>
+        </div>
+      <div>
+        <h4>Input</h4>
+        <input id="input" type="text" size="30" pInputText>
+      </div>
+    </div>
+
     </p-card>
   </div>
 </div>
+
 

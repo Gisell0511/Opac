@@ -1,1 +1,53 @@
-<p>diseminacion works!</p>
+<div class="principal">
+    <div class="second">
+      <p-card [style]="{ height: '630px' }">
+        <span class="p-input-icon-left">
+          <i class="pi pi-search"></i>
+          <input pInputText type="text" class="p-inputtext-sm" placeholder="Buscar" style="width: 385px;"/>
+      </span>
+      <br><br>
+      <p-table [tableStyle]="{ 'min-width': '10px' }">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Codigo</th>
+                <th>Area</th>
+                <th>Existencias</th>
+  
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-product>
+            <tr>
+                <td>{{ product.code }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.quantity }}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+      </p-card>
+    </div>
+    <div class="third" >
+      <p-card  [style]="{ height: '630px' }">
+        <p-table [tableStyle]="{ 'min-width': '100px' }">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th>Area</th>
+                  <th>Codigo</th>
+                  <th>Total</th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-product>
+              <tr>
+                  <td>{{ product.code }}</td>
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.category }}</td>
+                  <td>{{ product.quantity }}</td>
+              </tr>
+          </ng-template>
+      </p-table>
+  
+      </p-card>
+    </div>
+  </div>
+  
+  

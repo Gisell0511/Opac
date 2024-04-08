@@ -5,15 +5,11 @@
   padding: 8px;
 }
 
-.second
-{
-  width: 30%;
-  height: 500px ;
 
 
-}
 
 .third{
-  width: 70%;
-  height: 500px;
+  margin-top: 50px;
+  width: 100%;
+
 }

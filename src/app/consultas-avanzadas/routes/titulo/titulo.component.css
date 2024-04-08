@@ -7,13 +7,19 @@
 
 .second
 {
-  width: 70%;
-  height: 500px ;
+  margin-top: 50px;
+  width: 30%;
+
 
 }
 
 .third{
-  width: 30%;
-  height: 500px;
+  margin-top: 50px;
+  width: 70%;
+
 }
+
+
+
+
 
