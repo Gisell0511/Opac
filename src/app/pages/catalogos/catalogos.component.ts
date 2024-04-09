@@ -11,27 +11,23 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-catalogos',
   standalone: true,
-  imports: [RouterLink ,FormsModule, PanelMenuModule, CascadeSelectModule, InputTextModule, ButtonModule, DropdownModule ],
+  imports: [RouterLink, FormsModule, PanelMenuModule, CascadeSelectModule, InputTextModule, ButtonModule, DropdownModule],
   templateUrl: './catalogos.component.html',
   styleUrl: './catalogos.component.css'
 })
 export class CatalogosComponent implements OnInit {
 
-  public catalogos:any
+  public catalogos: any
+  public catalogo:any
+  public tipoC = 'F';
 
   //constructor(private readonly catalogoService: CatalogoService){}
   private catalogoService = inject(CatalogoService);
 
   ngOnInit() {
-    this.buscarConsulta()
+    this.getCatalogos()
   }
 
-  // catalogos: any[] = [
-  //   {
-  //     name: 'Corsalud',
-  //     id: '0'
-  //   }
-  // ]
 
   catalogoSeleccionado: string = ''
   tipoConsulta: any[] = [
@@ -55,12 +51,21 @@ export class CatalogosComponent implements OnInit {
   tipoConsultaSeleccionado: string = ''
   consultaUsuario: string = ''
 
-  buscarConsulta() {
-    console.log('buscar', this.consultaUsuario)
+  getCatalogos() {
     this.catalogoService.getCatalogos().subscribe((catalogos: any) => {
       console.log({ catalogos })
       this.catalogos = catalogos
+      this.catalogo = this.catalogos[0].tipoCatalogo
     })
+  }
+
+  getConsulta(){
+    console.log('buscar', this.consultaUsuario)
+    if(this.catalogo != '' ){
+      this.catalogoService.getConsulta(this.catalogo, this.tipoC, this.consultaUsuario).subscribe((data:any)=>{
+        console.log({data})
+      })
+    }
   }
 
 }
