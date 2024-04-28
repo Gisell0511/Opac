@@ -1,5 +1,4 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { CatalogoService } from '../../services/catalogo.service';
 import { FormsModule } from '@angular/forms';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { CascadeSelectModule } from 'primeng/cascadeselect';
@@ -7,6 +6,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { RouterLink } from '@angular/router';
+import { CatalogoService } from '../../services/catalogo/catalogo.service';
+
 
 @Component({
   selector: 'app-catalogos',
@@ -17,12 +18,17 @@ import { RouterLink } from '@angular/router';
 })
 export class CatalogosComponent implements OnInit {
 
-  public catalogos: any
+  public catalogos: any = [
+    {
+      name: 'Catalogos Corsalud',
+      id: '1'
+    }
+  ];
   public catalogo:any
   public tipoC = 'F';
 
-  //constructor(private readonly catalogoService: CatalogoService){}
-  private catalogoService = inject(CatalogoService);
+  constructor(private readonly catalogoService: CatalogoService){}
+  // private catalogoService = inject(CatalogoService);
 
   ngOnInit() {
     this.getCatalogos()
@@ -52,17 +58,17 @@ export class CatalogosComponent implements OnInit {
   consultaUsuario: string = ''
 
   getCatalogos() {
-    this.catalogoService.getCatalogos().subscribe((catalogos: any) => {
-      console.log({ catalogos })
-      this.catalogos = catalogos
-      this.catalogo = this.catalogos[0].tipoCatalogo
-    })
+    // // this.catalogoService.getCatalogos().subscribe((catalogos: any) => {
+    //   console.log({ catalogos })
+    //   this.catalogos = catalogos
+    //   this.catalogo = this.catalogos[0].tipoCatalogo
+    // })
   }
 
-  getConsulta(){
+  buscarPalabra(){
     console.log('buscar', this.consultaUsuario)
     if(this.catalogo != '' ){
-      this.catalogoService.getConsulta(this.catalogo, this.tipoC, this.consultaUsuario).subscribe((data:any)=>{
+      this.catalogoService.buscarPalabra(this.catalogo, this.tipoC, this.consultaUsuario).subscribe((data:any)=>{
         console.log({data})
       })
     }
