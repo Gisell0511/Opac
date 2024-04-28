@@ -14,7 +14,8 @@
       <p-dropdown
       [options]="catalogos"
       [(ngModel)]="catalogoSeleccionado"
-      optionLabel="nombreEmpresa"
+      optionLabel="name"
+      optionValue="id"
       [showClear]="true"
       placeholder="Selecciona un catalogo"
       [style]="{ width: '230%' }">
@@ -38,7 +39,7 @@
         [(ngModel)]="consultaUsuario"
         [style]="{ width: '1280px' }" />
       </span>
-      <p-button (onClick)="getConsulta()" label="Buscar"></p-button>
+      <p-button (onClick)="buscarPalabra()" label="Buscar"></p-button>
     <!-- </div> -->
   </div>
     <section class="contenedor_cards">
@@ -57,6 +58,7 @@
         <img src="../../../../assets/images/9.png" alt=""  class="cardp" routerLink="/servicios-catalogos/diseminacion">
       </div>
     </section>
+
 
 
 
