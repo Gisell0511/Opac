@@ -6,17 +6,22 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { RouterLink } from '@angular/router';
-import { CatalogoService } from '../../services/catalogo/catalogo.service';
+import { CatalogoService } from '../../services/catalogo.service';
+import { CommonModule } from '@angular/common';
+
 
 
 @Component({
-  selector: 'app-catalogos',
-  standalone: true,
-  imports: [RouterLink, FormsModule, PanelMenuModule, CascadeSelectModule, InputTextModule, ButtonModule, DropdownModule],
-  templateUrl: './catalogos.component.html',
-  styleUrl: './catalogos.component.css'
+    selector: 'app-catalogos',
+    standalone: true,
+    templateUrl: './catalogos.component.html',
+    styleUrl: './catalogos.component.css',
+    imports: [RouterLink, FormsModule, PanelMenuModule, CascadeSelectModule, InputTextModule, ButtonModule, DropdownModule,CommonModule]
 })
 export class CatalogosComponent implements OnInit {
+  public show: boolean = true;
+  public palabra!: string;
+  public result: any;
 
   public catalogos: any = [
     {
@@ -27,8 +32,8 @@ export class CatalogosComponent implements OnInit {
   public catalogo:any
   public tipoC = 'F';
 
-  constructor(private readonly catalogoService: CatalogoService){}
-  // private catalogoService = inject(CatalogoService);
+  // constructor(private readonly catalogoService: CatalogoService){}
+  private catalogoService = inject(CatalogoService);
 
   ngOnInit() {
     this.getCatalogos()
@@ -58,20 +63,33 @@ export class CatalogosComponent implements OnInit {
   consultaUsuario: string = ''
 
   getCatalogos() {
-    // // this.catalogoService.getCatalogos().subscribe((catalogos: any) => {
-    //   console.log({ catalogos })
-    //   this.catalogos = catalogos
-    //   this.catalogo = this.catalogos[0].tipoCatalogo
-    // })
+    this.catalogoService.getCatalogos().subscribe((catalogos: any) => {
+      console.log({ catalogos })
+      this.catalogos = catalogos
+      this.catalogo = this.catalogos[0].tipoCatalogo
+    })
   }
 
   buscarPalabra(){
     console.log('buscar', this.consultaUsuario)
     if(this.catalogo != '' ){
-      this.catalogoService.buscarPalabra(this.catalogo, this.tipoC, this.consultaUsuario).subscribe((data:any)=>{
+      this.catalogoService.getConsulta(this.catalogo, this.tipoC, this.consultaUsuario).subscribe((data:any)=>{
         console.log({data})
-      })
+        this.result=data;
+        if(this.result.length > 0){
+          this.show = false;
+      }
+    });
+
     }
   }
+
+
+  public return(): void{
+    this.show = true;
+    this.palabra='';
+
+  }
+
 
 }
