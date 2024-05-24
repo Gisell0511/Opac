@@ -6,7 +6,7 @@
         <input pInputText type="text" class="p-inputtext-sm" placeholder="Buscar" style="width: 385px;"/>
     </span>
     <br><br>
-    <p-table [tableStyle]="{ 'min-width': '10px' }">
+    <p-table [value]="result" [scrollable]="true" [scrollHeight]="'400px'" [tableStyle]="{ 'min-width': '10px' }">
       <ng-template pTemplate="header">
           <tr>
               <th>Codigo</th>
@@ -15,12 +15,11 @@
 
           </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-product>
-          <tr>
-              <td>{{ product.code }}</td>
-              <td>{{ product.name }}</td>
-              <td>{{ product.category }}</td>
-              <td>{{ product.quantity }}</td>
+      <ng-template pTemplate="body" let-item let-i="rowIndex">
+          <tr (click)="explorar2(item.area); setTitulo(item.nombre)">
+              <td>{{verCodigo(item.area)}}</td>
+              <td>{{item.nombre}}</td>
+              <td>{{item.total}}</td>
           </tr>
       </ng-template>
   </p-table>

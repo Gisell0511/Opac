@@ -1,68 +1,39 @@
-<div class ="container"  *ngIf="show" [@slideInOut]>
+<div class="container" *ngIf="show" [@slideInOut]>
   <!-- <div class="bprincipal"> -->
-    <div class="container-select">
-      <!-- <p-cascadeSelect
-      [options]="catalogos"
-      optionLabel="name"
-      optionGroupLabel="name"
-      optionValue="id"
-      [optionGroupChildren]="[]"
-      placeholder="Selecciona un catalogo"
-      [(ngModel)]="catalogoSeleccionado"
-      [style]="{ width: '18rem' }"
-      ></p-cascadeSelect> -->
-      <p-dropdown
-      [options]="catalogos"
-      [(ngModel)]="catalogoSeleccionado"
-      optionLabel="nombreEmpresa"
-      optionValue="id"
-      [showClear]="true"
-      placeholder="Selecciona un catalogo"
-      [style]="{ width: '230%' }">
+  <div class="container-select">
+    <p-dropdown [options]="catalogos" [(ngModel)]="catalogoSeleccionado" optionLabel="nombreEmpresa" optionValue="id"
+      [showClear]="true" placeholder="Selecciona un catalogo" [style]="{ width: '230%' }">
     </p-dropdown>
-      <p-cascadeSelect
-      [options]="tipoConsulta"
-      optionLabel="name"
-      optionGroupLabel="name"
-      optionValue="id"
-      [optionGroupChildren]="[]"
-      placeholder="Tipo consulta"
-      [(ngModel)]="tipoConsultaSeleccionado"
-      [style]="{ width: '410%'  }"
-      ></p-cascadeSelect>
-    </div>
-    <div class="container-search">
-      <span class="p-input-icon-left">
-        <i class="pi pi-search"></i>
-        <input type="text"
-        pInputText
-        [(ngModel)]="consultaUsuario"
-        [style]="{ width: '1280px' }" />
-      </span>
-      <p-button (onClick)="buscarPalabra()" label="Buscar"></p-button>
+    <p-cascadeSelect [options]="tipoConsulta" optionLabel="name" optionGroupLabel="name" optionValue="id"
+      [optionGroupChildren]="[]" placeholder="Tipo consulta" [(ngModel)]="tipoConsultaSeleccionado"
+      [style]="{ width: '410%'  }"></p-cascadeSelect>
+  </div>
+  <div class="container-search">
+    <span class="p-input-icon-left">
+      <i class="pi pi-search"></i>
+      <input type="text" pInputText [(ngModel)]="consultaUsuario" [style]="{ width: '1280px' }" />
+    </span>
+    <p-button (onClick)="buscarPalabra()" label="Buscar"></p-button>
     <!-- </div> -->
   </div>
-    <section class="contenedor_cards">
-      <h1>CATALOGO</h1>
-      <div class="card-fila">
-         <!-- alt=""  class="cardp" routerLink="/consultas-avanzadas/autor"> -->
-        <img src="../../../../assets/images/3.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/titulo">
-        <img src="../../../../assets/images/4.png" alt=""  class="cardp" routerLink="/consultas-avanzadas/materia">
-        <img src="../../../../assets/images/5.png" alt=""  class="cardp" routerLink="/catalogos-seriada/titulos-generales">
-      </div>
+  <section class="contenedor_cards">
+    <h1>CATALOGO</h1>
+    <div class="card-fila">
+      <!-- alt=""  class="cardp" routerLink="/consultas-avanzadas/autor"> -->
+      <img src="../../../../assets/images/3.png" alt="" class="cardp" routerLink="/consultas-avanzadas/titulo">
+      <img src="../../../../assets/images/4.png" alt="" class="cardp" routerLink="/consultas-avanzadas/materia">
+      <img src="../../../../assets/images/5.png" alt="" class="cardp" routerLink="/catalogos-seriada/titulos-generales">
+    </div>
 
-      <div class="card-fila">
-        <img src="../../../../assets/images/6.png" alt=""  class="cardp" routerLink="/explorar">
-        <img src="../../../../assets/images/7.png" alt=""  class="cardp" routerLink="/servicios-catalogos/reservas-web">
-        <img src="../../../../assets/images/8.png" alt=""  class="cardp" routerLink="/servicios-catalogos/circulacion-digital">
-        <img src="../../../../assets/images/9.png" alt=""  class="cardp" routerLink="/servicios-catalogos/diseminacion">
-      </div>
-    </section>
-
-
-
-
-
+    <div class="card-fila">
+      <img src="../../../../assets/images/6.png" alt="" class="cardp" routerLink="/explorar">
+      <img src="../../../../assets/images/7.png" alt="" class="cardp" routerLink="/servicios-catalogos/reservas-web">
+      <img src="../../../../assets/images/8.png" alt="" class="cardp"
+        routerLink="/servicios-catalogos/circulacion-digital">
+      <img src="../../../../assets/images/9.png" alt="" class="cardp" routerLink="/servicios-catalogos/diseminacion">
+    </div>
+  </section>
 </div>
 
-<!-- <app-catalogo-resultado [@slideInOut] *ngIf="!show" (return)="return()" [tipoR]="1" [result]="result"></app-catalogo-resultado> -->
+<app-catalogo-resultado *ngIf="!show" (return)="return()" [tipoR]="1"
+  [result]="result"></app-catalogo-resultado>

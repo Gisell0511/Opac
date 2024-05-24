@@ -8,6 +8,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { RouterLink } from '@angular/router';
 import { CatalogoService } from '../../services/catalogo.service';
 import { CommonModule } from '@angular/common';
+import { CatalogoResultadoComponent } from "../../catalogo-resultado/CatalogoResultadoComponent";
 
 
 
@@ -16,7 +17,7 @@ import { CommonModule } from '@angular/common';
     standalone: true,
     templateUrl: './catalogos.component.html',
     styleUrl: './catalogos.component.css',
-    imports: [RouterLink, FormsModule, PanelMenuModule, CascadeSelectModule, InputTextModule, ButtonModule, DropdownModule,CommonModule]
+    imports: [RouterLink, FormsModule, PanelMenuModule, CascadeSelectModule, InputTextModule, ButtonModule, DropdownModule, CommonModule, CatalogoResultadoComponent]
 })
 export class CatalogosComponent implements OnInit {
   public show: boolean = true;

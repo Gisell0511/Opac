@@ -7,3 +7,10 @@ body {
   height: 100dvh;
   width: 100dvw;
 }
+
+
+/* estilos globales (styles.css o styles.scss) */
+.p-datatable {
+  max-width: 100%;
+  overflow-x: auto;
+}
