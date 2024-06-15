@@ -19,3 +19,11 @@
 
 }
 
+tr:hover td {
+    background: #ff7676;
+    color: rgb(255, 255, 255);
+    cursor: pointer
+}
+
+
+
