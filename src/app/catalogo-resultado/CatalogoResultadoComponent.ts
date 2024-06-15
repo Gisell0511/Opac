@@ -1,12 +1,18 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { CatalogoService } from '../services/catalogo.service';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { TableModule } from 'primeng/table';
+import { NgPipesModule } from 'ngx-pipes';
+import { CommonModule } from '@angular/common';
 
 
 
 @Component({
   selector: 'app-catalogo-resultado',
   standalone: true,
-  imports: [],
+  imports: [ButtonModule, CardModule, InputTextModule, TableModule, NgPipesModule, CommonModule],
   templateUrl: './catalogo-resultado.component.html',
   styleUrl: './catalogo-resultado.component.css',
 })

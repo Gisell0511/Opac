@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
@@ -12,6 +12,12 @@ import { FocusTrapModule } from 'primeng/focustrap';
   templateUrl: './texto-completo.component.html',
   styleUrl: './texto-completo.component.css'
 })
-export class TextoCompletoComponent {
+export class TextoCompletoComponent  implements OnInit {
+
+    public tipoT: number = 3;
+    constructor() { }
+
+    ngOnInit() {
+    }
 
 }

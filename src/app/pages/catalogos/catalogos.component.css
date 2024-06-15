@@ -29,8 +29,8 @@ h1{
 }
 
 .contenedor_cards {
-  background: rgb(255, 254, 254);
-  width: 100%;
+  /* background: rgb(255, 254, 254); */
+  background-image: url(https://www.shutterstock.com/shutterstock/photos/2096519296/display_1500/stock-vector-white-background-with-red-diagonal-lines-2096519296.jpg);
   height: 100%;
   border-radius: 15px;
 }

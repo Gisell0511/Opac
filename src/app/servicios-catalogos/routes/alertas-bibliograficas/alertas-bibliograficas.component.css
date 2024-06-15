@@ -1,5 +1,8 @@
 .container{
     margin: auto;
+    background-image: url(https://www.shutterstock.com/shutterstock/photos/2096519296/display_1500/stock-vector-white-background-with-red-diagonal-lines-2096519296.jpg);
+    height: 100%;
+    width: 100%;
   }
 
   .u {
@@ -12,8 +15,7 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    
+
   }
-  
- 
-  
+
+
