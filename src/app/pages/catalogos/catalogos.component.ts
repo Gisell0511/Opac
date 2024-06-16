@@ -71,19 +71,26 @@ export class CatalogosComponent implements OnInit {
     })
   }
 
-  buscarPalabra(){
-    console.log('buscar', this.consultaUsuario)
-    if(this.catalogo != '' ){
-      this.catalogoService.getConsulta(this.catalogo, this.tipoC, this.consultaUsuario).subscribe((data:any)=>{
-        console.log({data})
-        this.result=data;
-        if(this.result.length > 0){
-          this.show = false;
-      }
-    });
-
+  buscarPalabra() {
+    console.log('buscar', this.consultaUsuario);
+    if (this.catalogo !== '') {
+      this.catalogoService.getConsulta(this.catalogo, this.tipoC, this.consultaUsuario).subscribe(
+        (data: any) => {
+          console.log({ data });
+          this.result = data; // Asigna los resultados de la búsqueda
+          if (this.result.length > 0) {
+            this.show = false; // Cambia a la vista de resultados si hay resultados
+          }
+        },
+        (error) => {
+          console.error('Error al buscar:', error);
+        }
+      );
     }
   }
+
+
+    
 
 
   public return(): void{

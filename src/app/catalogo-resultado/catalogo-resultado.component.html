@@ -3,50 +3,32 @@
     <p-card [style]="{ height: '630px' }">
       <span class="p-input-icon-left">
         <i class="pi pi-search"></i>
-        <input pInputText type="text" class="p-inputtext-sm" placeholder="Buscar" style="width: 385px;"/>
-    </span>
-    <br><br>
-    <!-- <p-table [value]="result" [scrollable]="true" [scrollHeight]="'400px'" [tableStyle]="{ 'min-width': '10px' }">
-      <ng-template pTemplate="header">
-          <tr>
-              <th>Codigo</th>
-              <th>Area</th>
-              <th>Existencias</th>
-
-          </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-item let-i="rowIndex">
-          <tr (click)="explorar2(item.area); setTitulo(item.nombre)">
-              <td>{{verCodigo(item.area)}}</td>
-              <td>{{item.nombre}}</td>
-              <td>{{item.total}}</td>
-          </tr>
-      </ng-template>
-  </p-table> -->
+        <input pInputText type="text" class="p-inputtext-sm" placeholder="Buscar" style="width: 385px;" (input)="onSearch($event)"/>
+      </span>
+      <br /><br />
     </p-card>
   </div>
-  <div class="third" >
-    <p-card  [style]="{ height: '630px' }">
-      <p-table [tableStyle]="{ 'min-width': '100px' }">
+  <div class="third">
+    <p-card [style]="{ height: '630px' }">
+      <p-table [value]="r2" [tableStyle]="{ 'min-width': '100px' }">
         <ng-template pTemplate="header">
-            <tr><i class="pi pi-arrow-left" style="color: slateblue"></i>
-                <th>Estandar</th>
-                <th>Existencias</th>
-                <th>MARC</th>
-                <th>ISBD</th>
-            </tr>
+          <tr>
+            <i class="pi pi-arrow-left" style="color: slateblue"></i>
+            <th>Estandar</th>
+            <th>Existencias</th>
+            <th>MARC</th>
+            <th>ISBD</th>
+          </tr>
         </ng-template>
         <ng-template pTemplate="body" let-product>
-            <tr>
-                <td>{{ product.code }}</td>
-                <td>{{ product.name }}</td>
-                <td>{{ product.category }}</td>
-                <td>{{ product.quantity }}</td>
-            </tr>
+          <tr>
+            <td>{{ product.estandar }}</td>
+            <td>{{ product.existencias }}</td>
+            <td>{{ product.marc }}</td>
+            <td>{{ product.isbd }}</td>
+          </tr>
         </ng-template>
-    </p-table>
-
+      </p-table>
     </p-card>
   </div>
 </div>
-
