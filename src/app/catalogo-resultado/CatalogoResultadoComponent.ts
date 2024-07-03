@@ -6,11 +6,29 @@ import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
 import { NgPipesModule } from 'ngx-pipes';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { SidebarModule } from 'primeng/sidebar';
+import { PipesModule } from '../shared/pipes/pipes.module';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { ToolbarModule } from 'primeng/toolbar';
+import { ListboxModule } from 'primeng/listbox';
 
 @Component({
   selector: 'app-catalogo-resultado',
   standalone: true,
-  imports: [ButtonModule, CardModule, InputTextModule, TableModule, NgPipesModule, CommonModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ButtonModule,
+    CardModule,
+    InputTextModule,
+    SidebarModule,
+    ToolbarModule,
+    ScrollPanelModule,
+    PipesModule,
+    ListboxModule
+  ],
   templateUrl: './catalogo-resultado.component.html',
   styleUrls: ['./catalogo-resultado.component.css'],
 })
@@ -19,6 +37,7 @@ export class CatalogoResultadoComponent {
   @Output() return = new EventEmitter();
   @Input() tipoC!: string;
   @Input() set result(data: any) {
+    console.log(data)
     if (this.tipoR === 1) {
       this.r1 = data;
     } else if (this.tipoR === 2) {
@@ -37,6 +56,14 @@ export class CatalogoResultadoComponent {
   public marc: any;
   public isbd: any;
   private originalData: any; // Variable para almacenar los datos originales
+  public sidenavOpen: boolean = true;
+  public searchText!: string;
+  public fichaimg!: string;
+  public tab1 = 0;
+  public tab2 = 0;
+  public tab3 = 0;
+  public tab4 = 0;
+  public notas: any;
 
   private _CatalogosService = inject(CatalogoService);
 
@@ -89,6 +116,79 @@ export class CatalogoResultadoComponent {
     } else {
       // Si el query está vacío, restauramos el array original
       this.r2 = this.originalData;
+    }
+  }
+
+  public viewDetail(item: any) {
+    this.fichaimg = item.woResultadoOpacPK.ficha;
+    this.getDetalles(item.woResultadoOpacPK.ficha);
+    this.getDetallesNotas(item.woResultadoOpacPK.ficha);
+    this.getDetallesTemas(item.woResultadoOpacPK.ficha);
+    this.getDetallesOtros(item.woResultadoOpacPK.ficha);
+    this.getDetallesExistencia(item.woResultadoOpacPK.ficha);
+    this.getDetallesMarc(item.woResultadoOpacPK.ficha);
+    this.getDetallesISDB(item.woResultadoOpacPK.ficha);
+
+    this.tab1 = 1;
+    this.tab2 = 0;
+    this.tab3 = 0;
+    this.tab4 = 0;
+  }
+
+  public getDetallesISDB(ficha: number): void {
+    this._CatalogosService.getLibrosDetallesISDB(ficha).subscribe(
+      data => { this.isbd = data }
+    );
+  }
+
+  public getImagen(ficha: string): string {
+    let imagen: string = 'http://190.68.154.214:8383/OpacService/books/' + ficha + '.jpg';
+    return imagen;
+  }
+
+   public goBack(): void {
+    if (this.r2 != null && this.r1 != null) {
+      this.tipoR = 2;
+      this.r1 = null;
+    } else {
+      if (this.r2 == null) {
+        this.return.emit();
+        this.r1 == null;
+        this.r2 == null;
+      } else {
+        this.r1 = null;
+        this.return.emit();
+        this.r2 = null;
+      }
+    }
+  }
+
+  public tab(state: number) {
+    switch (state) {
+      case state = 1:
+        this.tab1 = 1;
+        this.tab2 = 0;
+        this.tab3 = 0;
+        this.tab4 = 0;
+        break;
+      case state = 2:
+        this.tab1 = 0;
+        this.tab2 = 1;
+        this.tab3 = 0;
+        this.tab4 = 0;
+        break;
+      case state = 3:
+        this.tab1 = 0;
+        this.tab2 = 0;
+        this.tab3 = 1;
+        this.tab4 = 0;
+        break;
+      case state = 4:
+        this.tab1 = 0;
+        this.tab2 = 0;
+        this.tab3 = 0;
+        this.tab4 = 1;
+        break;
     }
   }
 }
