@@ -27,7 +27,8 @@ import { ListboxModule } from 'primeng/listbox';
     ToolbarModule,
     ScrollPanelModule,
     PipesModule,
-    ListboxModule
+    ListboxModule,
+    TableModule
   ],
   templateUrl: './catalogo-resultado.component.html',
   styleUrls: ['./catalogo-resultado.component.css'],

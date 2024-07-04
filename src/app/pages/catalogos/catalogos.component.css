@@ -5,7 +5,27 @@ h1{
   color: rgb(233, 22, 22);
   font-size:x-large;
 }
-.container {
+.container {.card-fila {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.cardp {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 15%;
+  height: 5%;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  transition: all linear 0.2s;
+  box-shadow: 9px 8px 22px -11px rgba(0,0,0,0.75);
+
+}
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -29,49 +49,64 @@ h1{
 }
 
 .contenedor_cards {
-  /* background: rgb(255, 254, 254); */
-  background-image: url(https://www.shutterstock.com/shutterstock/photos/2096519296/display_1500/stock-vector-white-background-with-red-diagonal-lines-2096519296.jpg);
+  background-image: url('../../../assets/images/fondo2.jpg');
   height: 100%;
   border-radius: 15px;
 }
 
-.card-fila {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  gap: 20px;
-  margin-top: 16px;
-}
 
-.cardp {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 15%;
-  height: 5%;
-  border-radius: 15px;
-  justify-content: center;
-  align-items: center;
-  transition: all linear 0.2s;
-  box-shadow: 9px 8px 22px -11px rgba(0,0,0,0.75);
-
-}
 
 .cardp:hover {
   transform: scale(1.05);
 }
 
 
-
-
-
-
 .bprincipal {
   display: flex;
 }
-
 
 ::ng-deep .p-button{
     background: #eb2525;
     border:none !important;
 }
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 12px; /* Ajusta el padding para pantallas medianas */
+  }
+
+  .cardp {
+    width: 25%; /* Ajusta el tamaño de las cards para pantallas medianas */
+    height: 180px; /* Ajusta la altura de las cards para pantallas medianas */
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    padding: 8px; /* Ajusta el padding para pantallas pequeñas */
+  }
+
+  .cardp {
+    width: 33%; /* Ajusta el tamaño de las cards para pantallas pequeñas */
+    height: 160px; /* Ajusta la altura de las cards para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%; /* Ancho del contenedor ajustado para pantallas pequeñas */
+  }
+
+  .cardp {
+    width: 45%; /* Ajusta el tamaño de las cards para pantallas muy pequeñas */
+    height: 140px; /* Ajusta la altura de las cards para pantallas muy pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .cardp {
+    width: 100%; /* Ajusta el tamaño de las cards para pantallas extra pequeñas */
+    height: 120px; /* Ajusta la altura de las cards para pantallas extra pequeñas */
+  }
+}
+
