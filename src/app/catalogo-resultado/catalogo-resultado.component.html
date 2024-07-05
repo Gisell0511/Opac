@@ -410,14 +410,14 @@
 <div class="principal">
   <div class="second">
     <p-card [style]="{ height: '630px' }">
-      <p-sidebar [(visible)]="sidenavOpen" [baseZIndex]="10000" [modal]="true">
-        <p-toolbar [style]="{'background-color': '#368ee0'}">
+      <!-- <p-sidebar [(visible)]="sidenavOpen" [baseZIndex]="10000" [modal]="true"> -->
+        <p-toolbar [style]="{'background-color': '#F51409'} ">
           <div class="p-toolbar-group-left">
             <input [(ngModel)]="searchText" type="text" pInputText placeholder="Buscar Libro..." class="search">
           </div>
         </p-toolbar>
         <div style="background: #e8ffea;">
-          <p-listbox [options]="r1" optionLabel="titulo" (onChange)="viewDetail($event.value)">
+          <p-listbox [options]="r1" optionLabel="titulo" (onChange)="viewDetail($event.value) "   >
             <ng-template let-item pTemplate="item">
               <div class="p-d-flex p-jc-between p-ai-center">
                 <div class="p-col-4 p-text-center">
@@ -434,21 +434,21 @@
             </ng-template>
           </p-listbox>
         </div>
-      </p-sidebar>
+      <!-- </p-sidebar> -->
     </p-card>
   </div>
   <div class="third">
     <p-card [style]="{ height: '630px' }">
       <p-toolbar [style]="{'background-color': '#'}" class="text-white">
         <div class="p-toolbar-group-left">
-          <button pButton icon="pi pi-list" (click)="sidenavOpen = !sidenavOpen"></button>
+          <!-- <button pButton icon="pi pi-list" (click)="sidenavOpen = !sidenavOpen"></button> -->
           <button pButton icon="pi pi-arrow-left" style="color: #fff;" (click)="goBack()"></button>
         </div>
         <div class="p-toolbar-group-right">
-          <button *ngIf="detalles" pButton label="Estándar" class="text-white" (click)="tab(1)"></button>
-          <button *ngIf="detalles" pButton label="Existencias" class="text-white" (click)="tab(2)"></button>
-          <button *ngIf="detalles" pButton label="MARC" class="text-white" (click)="tab(3)"></button>
-          <button *ngIf="detalles" pButton label="ISBD" class="text-white" (click)="tab(4)"></button>
+          <th><button *ngIf="detalles" pButton label="Estándar" class="text-white" (click)="tab(1)"></button></th>
+          <th><button *ngIf="detalles" pButton label="Existencias" class="text-white" (click)="tab(2)"></button></th>
+          <th><button *ngIf="detalles" pButton label="MARC" class="text-white" (click)="tab(3)"></button></th>
+          <th><button *ngIf="detalles" pButton label="ISBD" class="text-white" (click)="tab(4)"></button></th>
         </div>
       </p-toolbar>
 
