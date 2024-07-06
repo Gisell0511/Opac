@@ -1,16 +1,37 @@
 .container{
-  margin: auto;
+  border-radius: 8px;
+   margin: auto;
+   background-image: url('../../../../assets/images/fondo2.jpg');
+   height: 95%;
+   width: auto;
+   text-align: center;
+   color:#68AD51;
+ }
+
+ .u {
+   margin: 20px;
+
+ }
+
+
+
+ .row {
+
+   margin: 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+
+ }
+
+ p-image {
+  border-radius: 15px; /* Ajusta el valor según tus necesidades */
+  overflow: hidden; /* Asegúrate de que los bordes redondeados sean visibles */
+  display: inline-block; /* Asegúrate de que se comporte correctamente como elemento en línea */
+  border: 2px solid rgb(46, 45, 45); /* Define el grosor y color del borde */
 }
 
-.u {
-  margin: 20px;
-  box-shadow: 9px 7px 36px -12px rgba(0,0,0,0.8);
+p-image img {
+  border-radius: 15px; /* Aplica el mismo borde redondeado a la imagen interna */
 }
 
-.row {
-  margin: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  
-}

@@ -1,13 +1,16 @@
 .container{
+  border-radius: 8px;
     margin: auto;
-    background-image: url(https://www.shutterstock.com/shutterstock/photos/2096519296/display_1500/stock-vector-white-background-with-red-diagonal-lines-2096519296.jpg);
-    height: 100%;
-    width: 100%;
+    background-image: url('../../../../assets/images/fondo2.jpg');
+    height: 95%;
+    width: auto;
+    text-align: center;
+    color:orange;
   }
 
   .u {
     margin: 20px;
-    box-shadow: 9px 7px 36px -12px rgba(0,0,0,0.8);
+
   }
 
   .row {
@@ -18,4 +21,15 @@
 
   }
 
+
+  p-image {
+    border-radius: 15px; /* Ajusta el valor según tus necesidades */
+    overflow: hidden; /* Asegúrate de que los bordes redondeados sean visibles */
+    display: inline-block; /* Asegúrate de que se comporte correctamente como elemento en línea */
+    border: 2px solid rgb(46, 45, 45); /* Define el grosor y color del borde */
+  }
+
+  p-image img {
+    border-radius: 15px; /* Aplica el mismo borde redondeado a la imagen interna */
+  }
 
