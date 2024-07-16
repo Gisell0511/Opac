@@ -50,10 +50,11 @@ export const routes: Routes = [
                 path: 'texto-completo',
                 component: TextoCompletoComponent
               },
-              {
-                path: 'titulos-generales',
-                component: TitulosGeneralesComponent
-              }
+              // {
+              //   path: 'titulos-generales',
+              //   component: TitulosGeneralesComponent
+              // },
+              { path: 'seriada1', component: TitulosGeneralesComponent },
             ]
 
       },

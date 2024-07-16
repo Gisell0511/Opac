@@ -1,0 +1,225 @@
+<!-- <div fxLayout="row wrap" style="margin-top: 10px;">
+    <div fxFlex="100" class="flex-p">
+        <mat-card class="p-0 mailbox mat-elevation-z12" style="border-radius: 0px">
+            <mat-sidenav-container>
+                <mat-sidenav #sidenav [opened]="sidenavOpen" [mode]="sidenavOpen ? 'side' : 'over'" class="mailbox-sidenav mat-elevation-z1">
+                    <mat-toolbar style="background-color: #368ee0;" class="p-0 text-white" fxLayout="row" fxLayoutAlign="space-between center">
+                        <input [(ngModel)]="searchText" type="text" placeholder="Buscar Titulo..." class="search form-control form-control-sm mat-elevation-z3">
+
+                    </mat-toolbar>
+                    <mat-nav-list class="p-0 mailbox-sidenav-list" perfectScrollbar>
+
+                        <h5 class="text-wine text-center">Titulos Seriadas</h5>
+                        <mat-progress-bar *ngIf="wait" mode="query" color="primary" style="border-radius: 5px;">
+                        </mat-progress-bar>
+
+                        <div *ngFor="let item of resultGenerales | filter:searchText" (click)="getSeriadasResultadoDatosGenerales(item.idWlSeriadas); setNombre1(item.nombreSeriada)">
+
+                            <div class="user-content item" fxLayout="row" fxLayoutAlign="space-around center">
+                                <div fxFlex="100" fxFlex.xs="100" fxLayout="row" fxLayout.xs="column">
+                                    <mat-list-item>
+                                        <p matLine class="text-truncate text-wine subject"><strong>Nombre: </strong> {{item.nombreSeriada}}
+                                        </p>
+                                        <br>
+                                        <p matLine class="text-truncate text-wine subject">
+                                            <strong class="">Digitalizar: </strong>
+                                            <mat-checkbox *ngIf="item.digitalizar == 1" [(ngModel)]="checked" [disabled]="true"></mat-checkbox>
+                                            <mat-checkbox *ngIf="item.digitalizar == 0" [(ngModel)]="unchecked" [disabled]="true"></mat-checkbox>
+                                        </p>
+                                        <br>
+                                        <p matLine class="text-truncate text-wine subject">
+                                            <strong class="">ISSN: </strong>{{item.issn}}
+                                        </p>
+
+                                    </mat-list-item>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </mat-nav-list>
+                </mat-sidenav>
+                <div>
+                    <mat-toolbar style="background-color:  #368ee0;" class="text-white" fxLayout="row" fxLayoutAlign="space-between center">
+                        <div fxLayout="row" fxLayoutAlign="start center">
+                            <button mat-icon-button (click)="sidenav.toggle()">
+                                <mat-icon>list</mat-icon>
+                            </button>
+                            <button mat-icon-button style="color: #fff;" [routerLink]="['/']"><i
+                                    class="fa fa-arrow-left"></i></button>
+                        </div>
+
+                        <div>
+                            <button mat-button class="text-white" (click)="tab(2)">Temas</button>
+                            <button mat-button class="text-white" (click)="tab(3)">Ejemplares</button>
+                            <button mat-button class="text-white" (click)="tab(4)">Texto Completo</button>
+                        </div>
+
+
+                    </mat-toolbar>
+                    <div class="mailbox-content" style="background-color: #fff; padding: 10px" perfectScrollbar>
+
+                        <div fxLayout="row wrap">
+                            <div fxFlex="100" class="flex-p">
+                                <mat-card fxLayout="row" class="breadcrumb">
+                                    <a class="breadcrumb-item text-danger" fxLayout="row" fxLayoutAlign="start center">
+                                        <mat-icon>book</mat-icon>
+                                        <span class="breadcrumb-title">&nbsp; &nbsp; {{nombreTitulo}} &nbsp;
+                                            &nbsp;</span>
+                                        <span>/</span>
+                                        <span class="breadcrumb-title"> &nbsp; &nbsp;{{nombreTitulo2}}</span>
+                                    </a>
+                                </mat-card>
+                            </div>
+                        </div>
+
+
+
+                        <div [@slideInOut] *ngIf="table2 == 1">
+                            <app-temas (consultar)="getSeriadasTemasResultado($event)" [result]="resultTemasSeriadas">
+                            </app-temas>
+                        </div>
+
+
+                        <div [@slideInOut] *ngIf="table3 == 1">
+                            <table class="table table-sm table-hover ">
+                                <thead style="font-weight: bold;  color: #368ee0">
+
+                                    <tr>
+                                        <th>Tema Disponible</th>
+                                        <th>Total Ejemplares</th>
+                                        <th>Existencias</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor=" let item of resultTemasEjemplares">
+                                        <td>{{item.nombreTema}}</td>
+                                        <td>{{item.total}}</td>
+                                        <td class="text-center">
+                                            <a (click)="getSeriadasTemasEjemplaresResultado(item.woExplorarSeriadaPK.idTema)" style="font-size: 20px"><i class="text-info fa fa-search"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div [@slideInOut] *ngIf="table4 == 1">
+                            <div fxLayout="row wrap" style="margin-top: 10px;">
+                                <div fxFlex="100" fxFlex.gt-md="70" fxFlex.md="80" class="flex-p">
+                                    <div fxLayout="row wrap" fxLayoutAlign="center">
+
+
+                                        <div fxFlex="100" fxFlex.gt-sm="70" fxFlex.md="60" class="flex-p">
+                                            <div fxLayout="column">
+                                                <mat-form-field>
+                                                    <input placeholder="¿Que Desea Consultar?" style="color: #333" matInput [(ngModel)]="palabra" autofocus>
+                                                    <mat-icon matSuffix>mode_edit</mat-icon>
+                                                </mat-form-field>
+
+                                            </div>
+                                        </div>
+
+                                        <div fxFlex="100" fxFlex.gt-sm="30" fxFlex.md="40" class="flex-p">
+                                            <div fxLayout="column">
+                                                <a (click)="getConsulta()" class="btn btn-success ">
+                                                    <i class="fa fa-search"></i> Buscar</a>
+                                            </div>
+                                        </div>
+
+                                        <div fxFlex="100" fxFlex.gt-sm="100" fxFlex.md="100" class="flex-p">
+                                            <div fxLayout="row">
+                                                <div class="col-md-4">
+                                                    <mat-checkbox [(ngModel)]="ff" [disabled]="false"></mat-checkbox>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input [disabled]="checkedDate" type="date" class="form-control" placeholder="Angular forms" [(ngModel)]="date1">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input [disabled]="checkedDate" type="date" class="form-control" placeholder="Angular forms" [(ngModel)]="date2">
+                                                </div>
+                                            </div><br>
+                                            <div fxLayout="row">
+                                                <div class="col-md-4">
+                                                    <mat-checkbox [(ngModel)]="fs" [disabled]="false"></mat-checkbox>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div fxLayout="column">
+                                                        <mat-form-field>
+                                                            <mat-select [(ngModel)]="numSeriada" [disabled]="checkeds1" placeholder="Titulo Seriada">
+                                                                <mat-option *ngFor="let item of seriadas" [value]="item.idWlSeriadas">
+                                                                    {{item.nombreSeriada}}
+                                                                </mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div><br>
+                                            <div fxLayout="row">
+                                                <div class="col-md-4">
+                                                    <mat-checkbox [(ngModel)]="ft" [disabled]="false"></mat-checkbox>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div fxLayout="column">
+                                                        <mat-form-field>
+                                                            <mat-select [(ngModel)]="numTemas" [disabled]="checkeds2" placeholder="Tema Seriada">
+                                                                <mat-option *ngFor="let item of resultTemasSeriadas" [value]="item.woExplorarSeriadaPK.idTema">
+                                                                    {{item.nombreTema}}
+                                                                </mat-option>
+                                                            </mat-select>
+                                                        </mat-form-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <mat-progress-bar *ngIf="wait" mode="query" color="accent"></mat-progress-bar>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div [@slideInOut] *ngIf="tableR == 1">
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-sm table-hover">
+                                        <thead style="font-weight: bold; color: #368ee0">
+                                            <tr>
+                                                <th>Nombre</th>
+                                                <th>Sala</th>
+                                                <th>Fecha</th>
+                                                <th>Numero</th>
+                                                <th>Volumen</th>
+                                                <th>Contenido</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item2 of resultGenerales2">
+                                                <td>{{item2.fkWlSeriadas.nombreSeriada}}</td>
+                                                <td>{{item2.fkWaSalas.descripcion}}</td>
+                                                <td>{{item2.fechaPublicacionS}}</td>
+                                                <td>{{item2.numero}}</td>
+                                                <td>{{item2.volumen}}</td>
+                                                <td>
+                                                    <a (click)="verPdf(item2.archivoPdf)" class="text-info">
+                                                        {{item2.archivoPdf}}
+                                                    </a>
+
+                                                </td>
+
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </mat-sidenav-container>
+        </mat-card>
+    </div>
+</div> -->
+<h1>HOLA</h1>

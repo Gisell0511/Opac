@@ -48,7 +48,7 @@ export class SidebarComponent implements OnInit {
           {
             label: 'Titulos generales',
             icon: 'fa fa-sitemap  fa-fw',
-            routerLink: 'catalogos-seriada/titulos-generales',
+            routerLink: 'catalogos-seriada/seriada1',
           }
 
         ],

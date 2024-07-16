@@ -1,0 +1,20 @@
+<table class="table table-sm table-hover">
+    <thead style="font-weight: bold;  color: #368ee0">
+      <tr>
+        <th>Tema Disponible</th>
+        <th>Total Seriadas</th>
+        <th>Existencias</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of result">
+        <td>{{item.nombreTema}}</td>
+        <td>{{item.total}}</td>
+        <td class="text-center">
+          <a (click)="getSeriadasTemasResultado(item.woExplorarSeriadaPK.idCatalogo,item.woExplorarSeriadaPK.idTema)"
+            style="font-size: 20px"><i class=" text-info fa fa-search"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>

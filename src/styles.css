@@ -14,3 +14,7 @@ body {
   max-width: 100%;
   overflow-x: auto;
 }
+
+.p-listbox-list-wrapper {
+  max-height: 480px !important; /* Usa !important solo si es necesario */
+}
